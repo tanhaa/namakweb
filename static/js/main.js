@@ -1,6 +1,6 @@
 
 //change this to the rootURL of your salt-api
-var rootURL = "";
+var rootURL = "/m";
 
 $(function(){
     $("#test").click(function()
@@ -30,18 +30,20 @@ function getTest(){
 
 function renderResponse(data){
     result = JSON.stringify(data, null, 2);
-    $('#response').append('<pre>'+result+'</pre>');
+    $('#response').html('<pre>'+result+'</pre>');
     $("#myModal").modal('show');
 }
 
 function renderResponse2(data){
     result = JSON.stringify(data, null, 2);
+    console.log(JSON.parse(result));
+    result2 = DumpObjectIndented(data, " ");
     $('#response').html('<pre>'+result+'</pre>');
     $("#myModal").modal('show');
 }
 
 function getAuthTest2(){
-    url = rootURL + "run";
+    url = rootURL + "/run";
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
@@ -54,7 +56,8 @@ function getAuthTest2(){
             renderResponse2(data);
         },
         error: function(jqXHR, textStatus, errorThrown){
-            alert('It did not work: ' + textStatus);
+            alert('something went wrong!' + textStatus);
+            console.log(errorThrown);
         }
     });
 }

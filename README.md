@@ -6,9 +6,9 @@
 ## deployment
 * Place everything in the static folder in your static path
 * The index file in your app folder, put in your app path
-* Add the following lines to your salt master config file:
+* Or simply clone this git repo and add the sample config lines below to your salt master config file.
 
-##Sample Config:
+###Sample Config:
 ```
 static: /srv/salt/namakweb/static
 static_path: /static

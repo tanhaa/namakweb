@@ -24,3 +24,7 @@ body {
 .modal{
     overflow: scroll;
 }
+
+.navbar-brand>img {
+    margin: 5px 0 0 0;
+}

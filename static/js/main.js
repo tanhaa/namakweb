@@ -1,6 +1,6 @@
 
 //change this to the rootURL of your salt-api
-var rootURL = "/m";
+var rootURL = "/";
 
 $(function(){
     $("#test").click(function()
